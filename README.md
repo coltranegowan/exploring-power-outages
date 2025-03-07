@@ -1,3 +1,3 @@
-# exploring-power-outages
+# Exploring Power Outages
 DSC 80 Final Project at UC San Diego
  test
