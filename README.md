@@ -65,13 +65,6 @@ To start off, I explore some univariate data to identify patterns in the data.
 ></iframe>
 
 
-<iframe
-  src="assets/outages_by_cause.html"
-  width=800
-  height=600
-  frameborder=0
-></iframe>
-
 ### Bivariate Analysis
 
 
