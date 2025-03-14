@@ -55,7 +55,22 @@ The first couple rows of the cleaned dataframe are shown below:
 
 
 ### Univariate Analysis
+To start off, I explore some univariate data to identify patterns in the data.
 
+<iframe
+  src="assets/outages_per_year.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+<iframe
+  src="assets/outages_by_cause.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 ### Bivariate Analysis
 
