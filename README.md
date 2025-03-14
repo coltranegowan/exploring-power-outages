@@ -58,7 +58,7 @@ The first couple rows of the cleaned dataframe are shown below:
 To start off, I explore some univariate data to identify patterns in the data.
 
 <iframe
-  src="assets/outages_per_year.html"
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/outages_per_year.html"
   width="800"
   height="600"
   frameborder="0"
@@ -66,7 +66,7 @@ To start off, I explore some univariate data to identify patterns in the data.
 
 
 <iframe
-  src="assets/outages_by_cause.html"
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/outages_by_cause.html"
   width="800"
   height="600"
   frameborder="0"
