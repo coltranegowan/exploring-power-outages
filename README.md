@@ -57,14 +57,51 @@ The first couple rows of the cleaned dataframe are shown below:
 ### Univariate Analysis
 To start off, I explore some univariate data to identify patterns in the data.
 
-<iframe src="assets/outages_per_year.html" width=800 height=600 frameBorder=0></iframe>
+I first wanted to visualize the amount of outages per year to identify potential outliers:
 
+<iframe
+  src="assets/outages_per_year.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
+
+
+I then looked at the amount of outages by cause in the dataset overall:
+
+<iframe
+  src="assets/outages_by_cause.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
 
 ### Bivariate Analysis
+Next, I look at the possible relationships between columns, which will help guide the direction in which I will explore this data. Here are a couple I found relevant to my question.
 
+Here I looked at the the amount of outages per year and cause combined, to get a sense of the distribution of the data as a whole:
+
+<iframe
+  src="assets/outages_by_year_cause.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
+
+
+I also singled out the amount of severe weather outages in the dataset to see if there was a clear trend worth diving in to, but there was no clear trend in the data:
+
+<iframe
+  src="assets/severe_outages.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
 
 ### Interesting Aggregates
+I then made several pivot tables, grouping by different statistics that I thought would be telling in understanding the distribution of the data. In the dataframe below, I grouped by 'CLIMATE.CATEGORY' and 'CAUSE.CATEGORY', seeing if there was a meaningful difference in distribution based on the climate:
 
+'| CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |\n|:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|\n| cold               |                  19 |                      19 |                  122 |          15 |              22 |              239 |                              37 |\n| normal             |                  28 |                      26 |                  226 |          17 |              34 |              354 |                              59 |\n| warm               |                  10 |                       5 |                   70 |          14 |              13 |              166 |                              30 |'
 
 ## Assessment of Missingness
 ### NMAR Analysis
