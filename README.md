@@ -60,7 +60,7 @@ To start off, I explore some univariate data to identify patterns in the data.
 I first wanted to visualize the amount of outages per year to identify potential outliers:
 
 <iframe
-  src="/assets/outages_per_year.html"
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/outages_per_year.html"
   width=800
   height=600
   frameborder=0
