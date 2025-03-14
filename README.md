@@ -31,6 +31,27 @@ In researching this question, we can better understand the role of the climate i
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
+First, I need to clean the dataframe to prepare it for the upcoming analysis.
+
+- I only want to keep the columns listed above: 'YEAR', 'MONTH', 'U.S._STATE', 'CLIMATE.REGION', 'ANOMALY.LEVEL', 'CLIMATE.CATEGORY', 'OUTAGE.START.DATE', 
+    'OUTAGE.START.TIME', 'OUTAGE.RESTORATION.DATE', 'OUTAGE.RESTORATION.TIME', and 'CAUSE.CATEGORY'. All other columns are dropped. This way, I do not waste space and computing time with columns that are not relevant.
+
+- Then, I combine the 'OUTAGE.START.DATE' and 'OUTAGE.START.TIME' columns into one 'OUTAGE.START' column in datetime format for efficiency.
+
+- I do the same for the 'OUTAGE.RESTORATION.DATE' and 'OUTAGE.RESTORATION.TIME' columns, combining them into 'OUTAGE.RESTORATION' in datetime format.
+
+- After, I drop the old columns '.DATE' and '.TIME' respectively, since they are no longer needed.
+
+
+The first couple rows of the cleaned dataframe are shown below:
+
+|   OBS |   YEAR |   MONTH | U.S._STATE   | CLIMATE.REGION     |   ANOMALY.LEVEL | CLIMATE.CATEGORY   | CAUSE.CATEGORY     | OUTAGE.START        | OUTAGE.RESTORATION   |   OUTAGE.DURATION | SEASON   |
+|------:|-------:|--------:|:-------------|:-------------------|----------------:|:-------------------|:-------------------|:--------------------|:---------------------|------------------:|:---------|
+|     1 |   2011 |       7 | Minnesota    | East North Central |            -0.3 | normal             | severe weather     | 2011-07-01 17:00:00 | 2011-07-03 20:00:00  |        51         | Summer   |
+|     2 |   2014 |       5 | Minnesota    | East North Central |            -0.1 | normal             | intentional attack | 2014-05-11 18:38:00 | 2014-05-11 18:39:00  |         0.0166667 | Spring   |
+|     3 |   2010 |      10 | Minnesota    | East North Central |            -1.5 | cold               | severe weather     | 2010-10-26 20:00:00 | 2010-10-28 22:00:00  |        50         | Fall     |
+|     4 |   2012 |       6 | Minnesota    | East North Central |            -0.1 | normal             | severe weather     | 2012-06-19 04:30:00 | 2012-06-20 23:00:00  |        42.5       | Summer   |
+|     5 |   2015 |       7 | Minnesota    | East North Central |             1.2 | warm               | severe weather     | 2015-07-18 02:00:00 | 2015-07-19 07:00:00  |        29         | Summer   |
 
 
 ### Univariate Analysis
