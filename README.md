@@ -1,13 +1,13 @@
 # Exploring Power Outages
-#### DSC 80 Final Project at UC San Diego
 Coltrane Gowan
+
 
 
 ## Introduction
 This project analyzes the dataset Power Outages from Purdue University’s Laboratory for Advancing Sustainable Critical Infrastructure, which contains data on major power outage events in the continental U.S. from January 2000 to July 2016. All outages part of this dataset affected at least 50,000 customers or caused an energy loss of 300 MegaWatts or more. Information on each outage includes the geographical location of the outages, date and time of the outages, regional climatic information, land-use characteristics, electricity consumption patterns and economic characteristics of the states affected by the outages.
 
 This dataset contains 57 columns and 1534 rows, but for the purposes of this project, these are the columns I will focus on:
-| Column | Information |
+| Column Name | Information |
 | ----------- | ----------- |
 | 'YEAR' | Indicates the year when the outage event occurred |
 | 'MONTH' | Indicates the month when the outage event occurred |
@@ -22,10 +22,12 @@ This dataset contains 57 columns and 1534 rows, but for the purposes of this pro
 | 'CAUSE.CATEGORY' | Categories of all the events causing the major power outages |
 
 
+
 The question I want to center this exploration on is:
 How have characteristics of major power outages changed over time, and specifically how has the changing climate influenced how the distribution of these outages?
 
 In researching this question, we can better understand the role of the climate in our energy grid, and determine whether more intense precautions need to be put into place to curb the frequency of these events.
+
 
 ## Data Cleaning and Exploratory Data Analysis
 ### Data Cleaning
