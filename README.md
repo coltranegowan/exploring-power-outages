@@ -70,7 +70,7 @@ I first wanted to visualize the amount of outages per year to identify potential
 I then looked at the amount of outages by cause in the dataset overall:
 
 <iframe
-  src="assets/outages_by_cause.html"
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/outages_by_cause.html"
   width=800
   height=600
   frameborder=0
@@ -82,7 +82,7 @@ Next, I look at the possible relationships between columns, which will help guid
 Here I looked at the the amount of outages per year and cause combined, to get a sense of the distribution of the data as a whole:
 
 <iframe
-  src="assets/outages_by_year_cause.html"
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/outages_by_year_cause.html"
   width=800
   height=600
   frameborder=0
@@ -92,7 +92,7 @@ Here I looked at the the amount of outages per year and cause combined, to get a
 I also singled out the amount of severe weather outages in the dataset to see if there was a clear trend worth diving in to, but there was no clear trend in the data:
 
 <iframe
-  src="assets/severe_outages.html"
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/severe_outages.html"
   width=800
   height=600
   frameborder=0
@@ -115,7 +115,12 @@ I believe that 'OUTAGE.RESTORATION' is NMAR because its missingness appears to d
 ### Missingness Dependency
 To test the missingness dependency, I performed a permutation test to determine whether the missingness in the 'OUTAGE.RESTORATION' column is dependent on the 'CAUSE.CATEGORY' column. Specifically, I tested whether the variance of missingness proportions across different outage causes is significantly higher than what would be expected under the assumption that missing values are independent of the outage cause.
 
-
+<iframe
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/missingness_plot.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
 
 Since the p-value is 0, I now have evidence that missingness is not random with respect to 'CAUSE.CATEGORY'. This suggests that outages categorized as intentional attacks may systematically lack restoration time data. 
 
@@ -128,6 +133,13 @@ I next wanted to test if there is a trend to the amount of intentional attacks p
 Null Hypothesis: The amount of outages caused by intentional attacks is uniform throughout the years in the dataset.
 
 Alternative Hypothesis: The amount of outages caused by intentional attacks is not uniform throughout the years in the dataset.
+
+<iframe
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/intent_dist.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
 
 Performing this hypothesis test, I got a chi square statistic of 316.59, which gives a p-value of near 0. With this, there is evidence that the amount of intentional attacks per year is not uniform, and therefore has some trend to the data.
 
@@ -168,6 +180,15 @@ Null Hypothesis: My model is fair. Its precision for outages in the Southeast an
 
 Alternative Hypothesis: My model is unfair. Its precision for outages in the Southeast is different than outages in the Northwest.
 
-The test statistic used was the difference in weighted F1-scores between Group X and Group Y. The observed difference was 0.0172, with Group X achieving an F1-score of 0.7498 and Group Y an F1-score of 0.7326. After running the permutation test, I computed a p-value of 0.928, which is far greater than the standard significance threshold of 0.05.
+The test statistic used was the difference in weighted F1-scores between Group X and Group Y. The observed difference was 0.0172, with Group X achieving an F1-score of 0.7498 and Group Y an F1-score of 0.7326. 
+
+<iframe
+  src="https://coltranegowan.github.io/exploring-power-outages/assets/f1_dist.html"
+  width=800
+  height=600
+  frameborder=0
+></iframe>
+
+After running the permutation test, I computed a p-value of 0.928, which is far greater than the standard significance threshold of 0.05.
 
 Since the p-value is so high, I fail to reject the null hypothesis. This result suggests that the observed difference in F1-scores is likely due to random chance rather than systemic bias in the model’s performance across these climate regions. In other words, the model appears to classify outages fairly between these two groups. However, if fairness remains a concern, I could explore additional fairness metrics such as demographic parity or equalized odds, or extend the analysis to other regions or features that may impact predictions.
