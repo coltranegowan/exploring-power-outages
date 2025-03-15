@@ -60,7 +60,7 @@ To start off, I explore some univariate data to identify patterns in the data.
 I first wanted to visualize the amount of outages per year to identify potential outliers:
 
 <iframe
-  src="outages_per_year.html"
+  src="assets/outages_per_year.html"
   width=800
   height=600
   frameborder=0
@@ -101,7 +101,11 @@ I also singled out the amount of severe weather outages in the dataset to see if
 ### Interesting Aggregates
 I then made several pivot tables, grouping by different statistics that I thought would be telling in understanding the distribution of the data. In the dataframe below, I grouped by 'CLIMATE.CATEGORY' and 'CAUSE.CATEGORY', seeing if there was a meaningful difference in distribution based on the climate:
 
-| CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |\n|:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|\n| cold               |                  19 |                      19 |                  122 |          15 |              22 |              239 |                              37 |\n| normal             |                  28 |                      26 |                  226 |          17 |              34 |              354 |                              59 |\n| warm               |                  10 |                       5 |                   70 |          14 |              13 |              166 |                              30 |
+| CLIMATE.CATEGORY   |   equipment failure |   fuel supply emergency |   intentional attack |   islanding |   public appeal |   severe weather |   system operability disruption |
+|:-------------------|--------------------:|------------------------:|---------------------:|------------:|----------------:|-----------------:|--------------------------------:|
+| cold               |                  19 |                      19 |                  122 |          15 |              22 |              239 |                              37 |
+| normal             |                  28 |                      26 |                  226 |          17 |              34 |              354 |                              59 |
+| warm               |                  10 |                       5 |                   70 |          14 |              13 |              166 |                              30 |
 
 
 ## Assessment of Missingness
