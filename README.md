@@ -60,7 +60,7 @@ To start off, I explore some univariate data to identify patterns in the data.
 I first wanted to visualize the amount of outages per year to identify potential outliers:
 
 <iframe
-  src="assets/outages_per_year.html"
+  src="/outages_per_year.html"
   width=800
   height=600
   frameborder=0
@@ -144,14 +144,15 @@ Despite being a simple baseline model, its current form is likely too limited to
 ## Final Model
 For my final model, I expanded the feature set by incorporating 'CLIMATE.REGION' and 'ANOMALY.LEVEL'. These additions were based on domain knowledge of outages—climate conditions and anomaly severity are likely to influence the cause of an outage. 'CLIMATE.REGION' provides categorical information about geographic areas, which is important since certain causes of outages, like severe weather, are geographically dependent. 'ANOMALY.LEVEL' captures deviations from normal conditions, which may also help distinguish between different causes of outages.
 
-To preprocess the data effectively, I applied different transformations based on feature types. Numerical features (YEAR, MONTH, ANOMALY.LEVEL) were imputed with their mean values and scaled using StandardScaler. I also applied a QuantileTransformer to normalize distributions and PolynomialFeatures (degree=2, interaction_only=True) to capture potential interactions between numerical features. This was especially relevant since climate anomalies might have different impacts depending on the time of year. For the categorical feature CLIMATE.REGION, I imputed missing values using the most frequent category and applied OneHotEncoder to convert it into a format suitable for machine learning.
+To preprocess the data, I applied different transformations based on feature types. Numerical features (YEAR, MONTH, ANOMALY.LEVEL) were imputed with their mean values and scaled using StandardScaler. I also applied a QuantileTransformer to normalize distributions and PolynomialFeatures (degree=2, interaction_only=True) to capture potential interactions between numerical features. For the categorical feature CLIMATE.REGION, I imputed missing values using the most frequent category and applied OneHotEncoder to convert it into a format suitable for machine learning.
 
 For the modeling algorithm, I selected a Random Forest Classifier, a robust ensemble method that is well-suited for handling both numerical and categorical features while automatically managing feature importance and interactions. Through GridSearchCV, I tuned the hyperparameters using 5-fold cross-validation. The best hyperparameters found were:
 
-Number of Estimators (n_estimators): 100
-Maximum Depth (max_depth): 20
-Minimum Samples Split (min_samples_split): 2
-Minimum Samples Leaf (min_samples_leaf): 2
+- Number of Estimators (n_estimators): 100
+- Maximum Depth (max_depth): 20
+- Minimum Samples Split (min_samples_split): 2
+- Minimum Samples Leaf (min_samples_leaf): 2
+
 These hyperparameters balance model complexity and generalization, while preventing overfitting and maintaining the predictive power of my model.
 
 Compared to the baseline logistic regression model, my final model showed a decent improvement in performance. The baseline model, which only used YEAR and MONTH, achieved an accuracy of 53%, suggesting that outages are not purely determined by temporal trends. By incorporating CLIMATE.REGION and ANOMALY.LEVEL, the final model achieved a cross-validation accuracy of 67.2%, a substantial improvement over the baseline. This indicates that environmental and climate-related factors are important predictors of outage causes.
